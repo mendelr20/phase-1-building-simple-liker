@@ -11,20 +11,18 @@ hearts.forEach(heart =>heart.addEventListener('click', () => {
   mimicServerCall()
   .then(() => {
     if (heart.innerHTML === EMPTY_HEART) {
-      heart.innerHTML = FULL_HEART
+      heart.innerHTML = FULL_HEART  
+      heart.classList.add("activated-heart")
     }
     else if (heart.innerHTML === FULL_HEART) {
       heart.innerHTML = EMPTY_HEART
+      heart.classList.remove("activated-heart")
     }
   })
   .catch(() => {
-      
-    setTimeout(() => {
-      const erMsg =document.getElementById("modal")
-      erMsg.className = "show"
-      const erMsg =document.getElementById("modal")
-      erMsg.hidden
-    } ,300);
+    const erMsg = document.getElementById("modal")
+    erMsg.className = ""
+    setTimeout(() => erMsg.className = "hidden" ,3000);
     
   })
 }))
