@@ -6,7 +6,7 @@ const FULL_HEART = '♥'
 
 const hearts = document.querySelectorAll("span.like-glyph")
 console.log(hearts)
-hearts.forEach(heart => addEventListener('click', () => {
+hearts.forEach(heart => heart.addEventListener('click', () => {
   console.log(heart.innerHTML)
   mimicServerCall()
   .then(() => {
@@ -16,6 +16,11 @@ hearts.forEach(heart => addEventListener('click', () => {
     else if (heart.innerHTML === FULL_HEART) {
       heart.innerHTML = EMPTY_HEART
     }
+  })
+  .catch(() =>{
+    const errorMsg = document.getElementById("modal")
+    console.log(errorMsg)
+    errorMsg.className = "show"
   })
 }))
 
