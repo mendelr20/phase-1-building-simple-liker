@@ -21,10 +21,11 @@ hearts.forEach(heart =>heart.addEventListener('click', () => {
       
     setTimeout(() => {
       const erMsg =document.getElementById("modal")
+      erMsg.className = "show"
+      const erMsg =document.getElementById("modal")
       erMsg.hidden
     } ,300);
-    const erMsg =document.getElementById("modal")
-    erMsg.className = "show"
+    
   })
 }))
 
