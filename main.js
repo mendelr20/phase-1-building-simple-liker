@@ -2,7 +2,24 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-// Your JavaScript code goes here!
+
+
+const hearts = document.querySelectorAll("span.like-glyph")
+console.log(hearts)
+hearts.forEach(heart => addEventListener('click', () => {
+  console.log(heart.innerHTML)
+  mimicServerCall()
+  .then(() => {
+    if (heart.innerHTML === EMPTY_HEART) {
+      heart.innerHTML = FULL_HEART
+    }
+    else if (heart.innerHTML === FULL_HEART) {
+      heart.innerHTML = EMPTY_HEART
+    }
+  })
+}))
+
+
 
 
 
