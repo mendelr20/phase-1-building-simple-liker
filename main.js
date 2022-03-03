@@ -6,7 +6,7 @@ const FULL_HEART = '♥'
 
 const hearts = document.querySelectorAll("span.like-glyph")
 console.log(hearts)
-hearts.forEach(heart => heart.addEventListener('click', () => {
+hearts.forEach(heart =>heart.addEventListener('click', () => {
   console.log(heart.innerHTML)
   mimicServerCall()
   .then(() => {
@@ -17,10 +17,14 @@ hearts.forEach(heart => heart.addEventListener('click', () => {
       heart.innerHTML = EMPTY_HEART
     }
   })
-  .catch(() =>{
-    const errorMsg = document.getElementById("modal")
-    console.log(errorMsg)
-    errorMsg.className = "show"
+  .catch(() => {
+      
+    setTimeout(() => {
+      const erMsg =document.getElementById("modal")
+      erMsg.hidden
+    } ,300);
+    const erMsg =document.getElementById("modal")
+    erMsg.className = "show"
   })
 }))
 
